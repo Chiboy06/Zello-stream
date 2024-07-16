@@ -13,7 +13,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://meeting-auth-api-2.onrender.com",
+        target: "https://meeting-auth-api.onrender.com",
         changeOrigin: true,
       }
     }
