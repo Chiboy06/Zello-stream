@@ -11,7 +11,6 @@ const API_KEY = import.meta.env.VITE_EXPO_PUBLIC_STREAM_ACCESS_KEY!;
 
 const Layout = () => {
   const { authState, initialized } = useAuth();
-  console.log("AS, IN", authState, initialized)
   const [client, setClient] = useState<StreamVideoClient | null>(null);
   const navigate = useNavigate();
 
@@ -20,13 +19,10 @@ const Layout = () => {
     if (!initialized) return;
 
     if (authState?.authenticated) {
-      console.log("Authenticated");
-      console.log("Client: ", client);
       client
       navigate("/home");
       
     } else if (!authState?.authenticated) {
-      console.log("Not Authenticated");
       client?.disconnectUser();
       navigate("/login");
     }
@@ -34,14 +30,13 @@ const Layout = () => {
 
   useEffect(() => {
     if (authState?.authenticated && authState.token) {
-      console.log("creating a client");
       const user: User = { id: authState.user_id! };
 
       try {
         const client = new StreamVideoClient({ apiKey: API_KEY, user, token: authState.token })
         setClient(client);
       } catch (e) {
-        console.log("Error creating client", e);
+        console.error("Error creating client", e);
       }
     }
   }, [authState]);
