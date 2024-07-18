@@ -12,6 +12,7 @@ import CustomBottomSheet from './CustomBottomSheet';
 import type { CallControlsProps } from '@stream-io/video-react-sdk';
 import { useMediaQuery } from 'react-responsive';
 import Participant from './Participant';
+import CustomShareButton from './CustomShareButton';
 type CallControlsComponentProps = CallControlsProps & { callId: string };
 
 
@@ -28,7 +29,8 @@ export const CallControls = ({ onLeave, callId }: CallControlsComponentProps) =>
             <ReactionsButton />
             <ScreenShareButton />
             <RecordCallButton />
-            <Participant/>
+            <Participant />
+            <CustomShareButton id={callId} />
             {!isMediumOrLarger && (
                 <CustomBottomSheet channelId={callId} />
             )}

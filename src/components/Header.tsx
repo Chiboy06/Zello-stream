@@ -1,6 +1,7 @@
-import Logo from './Logo'
-import { LogOutIcon } from 'lucide-react'
-import { useAuth } from '../../context/AuthContext'
+'use client'
+import { LogOutIcon } from "lucide-react";
+import { useAuth } from "../../context/AuthContext";
+import Logo from "./Logo";
 
 function Header() {
     const { onLogout } = useAuth();

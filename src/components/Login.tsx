@@ -28,7 +28,7 @@ const Login = () => {
       setEmail('');
     } catch (e) {
       console.error('Error during login: ', e);
-      let errorMessage = 'Error: Could not login';
+      let errorMessage = e;
   
       if (e instanceof Error) {
         errorMessage = e.message;

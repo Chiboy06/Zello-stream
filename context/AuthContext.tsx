@@ -9,7 +9,7 @@ interface AuthProps {
     initialized: boolean;
 }
 
-const TOKEN = 'my-special-token';
+const TOKEN = 'special-token';
 // const API_URL = "/api";
 const API_URL = import.meta.env.VITE_SERVER_URL!;
 const AuthContext = createContext<Partial<AuthProps>>({});
