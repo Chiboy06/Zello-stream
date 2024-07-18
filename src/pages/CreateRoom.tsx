@@ -76,7 +76,7 @@ const CreateRoom = ({ reject }: CustomCancelCallBtn) => {
   
 
   return (
-    <div className='bg-slate-900 scroll-m-0'>
+    <div className='h-screen bg-slate-900 scroll-m-0'>
       <div className='flex flex-col h-svh md:flex-row'>
         <StreamTheme style={{ position: 'relative' }}>    
           <StreamCall call={call}>

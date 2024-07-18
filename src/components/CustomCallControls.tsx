@@ -1,6 +1,6 @@
 import {
     CancelCallButton,
-    ReactionsButton,
+    // ReactionsButton,
     // RecordCallButton,
     ScreenShareButton,
     SpeakingWhileMutedNotification,
@@ -26,7 +26,7 @@ export const CallControls = ({ onLeave, callId }: CallControlsComponentProps) =>
                 <ToggleAudioPublishingButton />
             </SpeakingWhileMutedNotification>
             <ToggleVideoPublishingButton />
-            <ReactionsButton />
+            {/* <ReactionsButton /> */}
             <ScreenShareButton />
             {/* <RecordCallButton /> */}
             <Participant />
