@@ -51,6 +51,7 @@ const Layout = () => {
       {client && (
         <StreamVideo client={client}>
           <Routes>
+            <Route  path="*" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/home/create/:id" element={<CreateRoom />} />
             <Route path="/home/room" element={<JoinRoom />} />

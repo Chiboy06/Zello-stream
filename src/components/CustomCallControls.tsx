@@ -1,7 +1,7 @@
 import {
     CancelCallButton,
     ReactionsButton,
-    RecordCallButton,
+    // RecordCallButton,
     ScreenShareButton,
     SpeakingWhileMutedNotification,
     ToggleAudioPublishingButton,
@@ -21,14 +21,14 @@ type CallControlsComponentProps = CallControlsProps & { callId: string };
 export const CallControls = ({ onLeave, callId }: CallControlsComponentProps) => {
     const isMediumOrLarger = useMediaQuery({ query: '(min-width: 768px)' });
     return (
-        <div className="str-video__call-controls gap-2">
+        <div className="str-video__call-controls gap-[2px]">
             <SpeakingWhileMutedNotification>
                 <ToggleAudioPublishingButton />
             </SpeakingWhileMutedNotification>
             <ToggleVideoPublishingButton />
             <ReactionsButton />
             <ScreenShareButton />
-            <RecordCallButton />
+            {/* <RecordCallButton /> */}
             <Participant />
             <CustomShareButton id={callId} />
             {!isMediumOrLarger && (
